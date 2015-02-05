@@ -1,0 +1,38 @@
+function [ r ] = bisection( f, a, b, N)
+    % Check that that neither end-point is a root
+    % and if f(a) and f(b) have the same sign, throw an exception.
+
+    if ( f(a) == 0 )
+	r = a;
+	return;
+    elseif ( f(b) == 0 )
+	r = b;
+	return;
+    elseif ( f(a) * f(b) > 0 )
+        error( 'f(a) and f(b) do not have opposite signs' );
+    end
+
+    % We will iterate N times and if a root was not
+    % found after N iterations, an exception will be thrown.
+
+    for k = 1:N
+        % Find the mid-point
+        c = (a + b)/2;
+
+        % Check if we found a root or whether or not
+        % we should continue with:
+        %          [a, c] if f(a) and f(c) have opposite signs, or
+        %          [c, b] if f(c) and f(b) have opposite signs.
+
+        if ( f(c) == 0 )
+            r = c;
+            return;
+        elseif ( f(c)*f(a) < 0 )
+            b = c;
+        else
+            a = c;
+        end
+    end
+    root = (a+b)/2;
+    sprintf('%0.8f', root)
+end
