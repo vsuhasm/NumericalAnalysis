@@ -1,3 +1,4 @@
+%Venkata Suhas Maringanti
 %Program Fixed-Point Iteration
 %Computes approximate solution of g(x)=x
 %Input: function handle g, starting guess x0,

@@ -1,3 +1,4 @@
+% Venkata Suhas Maringanti
 % Solves f (x ) = 0 by doing n steps of the secant method
 % starting with x0 and x1 .
 % Inputs : f -- the function , input as an inline function
@@ -5,7 +6,7 @@
 % x1 -- second starting geuss
 % n -- the number of iterations
 % Output : x -- the approximate solution
-% For the given problem, use x0 = 0, x1 = 1, n = 10
+% For the given problem, use x0 = 0, x1 = 1, n = 2
 
 function x = secant (f ,x0 ,x1 , n)
 format long % prints more digits
